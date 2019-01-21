@@ -2,13 +2,9 @@ package com.example.kstreamers
 
 import java.util.ArrayList
 import org.apache.ignite.events.CacheEvent
-import org.apache.flink.streaming.api.datastream.DataStream
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment
-import org.apache.ignite.events.EventType.EVT_CACHE_OBJECT_PUT
 import org.apache.ignite.source.flink.IgniteSource
-import org.apache.ignite.IgniteCache
 import org.apache.ignite.Ignition
-import org.apache.ignite.Ignite
 import org.apache.ignite.events.EventType
 
 
@@ -28,7 +24,7 @@ object FlinkIgniteSourceSelfExample {
         val GRID_NAME = "igniteServerNode"
 
         /** Ignite test configuration file.  */
-        val GRID_CONF_FILE = "modules/flink/src/test/resources/example-ignite.xml"
+        val GRID_CONF_FILE = "/Users/saikat/git/kstreamers/src/main/resources/example-ignite.xml";
 
         val ignite = Ignition.start(GRID_CONF_FILE)
 
