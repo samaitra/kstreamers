@@ -28,14 +28,15 @@ object FlinkIgniteSourceSelfExample {
 
         val ignite = Ignition.start(GRID_CONF_FILE)
 
-        val cache = ignite.getOrCreateCache<Any, Any>(TEST_CACHE)
+        val cache = ignite.getOrCreateCache<Int, Int>(TEST_CACHE)
 
         val igniteSrc = IgniteSource(TEST_CACHE)
-        igniteSrc.setIgnite(ignite)
-        igniteSrc.setEvtBatchSize(10)
-        igniteSrc.setEvtBufTimeout(10)
 
-        igniteSrc.start(null, EventType.EVT_CACHE_OBJECT_PUT)
+        igniteSrc.setIgnite(ignite)
+        igniteSrc.setEvtBatchSize(1)
+        igniteSrc.setEvtBufTimeout(100)
+
+        igniteSrc.start(null, EventType.EVT_CACHE_OBJECT_PUT, EventType.EVT_CACHE_ENTRY_CREATED)
 
         val env = StreamExecutionEnvironment.getExecutionEnvironment()
         env.config.disableSysoutLogging()
