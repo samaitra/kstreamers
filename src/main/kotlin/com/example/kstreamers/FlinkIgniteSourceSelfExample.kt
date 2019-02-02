@@ -8,14 +8,10 @@ import org.apache.ignite.Ignition
 import org.apache.ignite.events.EventType
 
 
-object FlinkIgniteSourceSelfExample {
-
     /**
      * Validation for the Flink source with EventCount and IgnitePredicate Filter. Ignite started in source based on
      * what is specified in the configuration file.
      */
-    @Throws(Exception::class)
-    @JvmStatic
     fun main(args: Array<String>) {
         /** Cache name.  */
         val TEST_CACHE = "testCache"
@@ -59,5 +55,3 @@ object FlinkIgniteSourceSelfExample {
         stream.print()
         env.execute()
     }
-
-}
