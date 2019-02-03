@@ -7,7 +7,6 @@ import org.apache.ignite.source.flink.IgniteSource
 import org.apache.ignite.Ignition
 import org.apache.ignite.events.EventType
 
-
     /**
      * Validation for the Flink source with EventCount and IgnitePredicate Filter. Ignite started in source based on
      * what is specified in the configuration file.
@@ -15,9 +14,6 @@ import org.apache.ignite.events.EventType
     fun main(args: Array<String>) {
         /** Cache name.  */
         val TEST_CACHE = "testCache"
-
-        /** Grid Name.  */
-        val GRID_NAME = "igniteServerNode"
 
         /** Ignite test configuration file.  */
         val GRID_CONF_FILE = "/Users/saikat/git/kstreamers/src/main/resources/example-ignite.xml";

@@ -59,6 +59,14 @@ bootJar {
 	mainClassName = 'com.example.kstreamers.FlinkIgniteSourceSelfExampleKt'
 }
 
+//jar {
+//	zip64 true
+//	manifest {
+//		attributes 'Main-Class' : 'com.example.kstreamers.FlinkIgniteSourceSelfExampleKt'
+//	}
+//	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+//}
+
 compileKotlin {
 	kotlinOptions {
 		freeCompilerArgs = ['-Xjsr305=strict']
