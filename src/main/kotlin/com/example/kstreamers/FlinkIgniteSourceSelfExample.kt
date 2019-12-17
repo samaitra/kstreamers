@@ -16,7 +16,7 @@ import org.apache.ignite.events.EventType
         val TEST_CACHE = "testCache"
 
         /** Ignite test configuration file.  */
-        val GRID_CONF_FILE = "/Users/saikat/git/kstreamers/src/main/resources/example-ignite.xml";
+        val GRID_CONF_FILE = "PATH_TO_PROJECT/kstreamers/src/main/resources/example-ignite.xml";
 
         val ignite = Ignition.start(GRID_CONF_FILE)
 
